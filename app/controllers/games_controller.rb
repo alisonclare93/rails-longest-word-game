@@ -7,6 +7,7 @@ class GamesController < ApplicationController
   end
 
   def score
+    # session[:score] = 0
     word = params["word"]
     letters_array = params["letters_array"].split
 
@@ -16,8 +17,11 @@ class GamesController < ApplicationController
       @message = "Sorry, but #{word} does not seem to be a valid English word..."
     else
       @message = "Congratulations! #{word.capitalize} is a valid English word!"
+      # @score_message = "Your score is #{score}."
     end
   end
+
+
 
   private
 
